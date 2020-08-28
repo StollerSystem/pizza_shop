@@ -65,12 +65,30 @@ function Topping(name,cost,id) {
 }
 
 function generateToppings () { //Maybe use a loop here???
-  let cheese = new Topping("Cheese",2.50,"0");
-  let pepperoni = new Topping("Pepperoni",1,"1");
-  let olives = new Topping("Olives",.25,"2");
-  let onions = new Topping("Onions",.25,"3");
+  toppings = ["Cheese"]
+  prices = [2.50,]
 
-  pizzaShop.allToppings.push(cheese,pepperoni,olives,onions);
+  for (let i=0;i<toppings.length;i++) {
+    pizzaShop.allToppings.push(new Topping(toppings[i],prices[i],i))
+  }
+
+
+
+
+  // let cheese = new Topping("Cheese",2.50,"0");
+  // let pepperoni = new Topping("Pepperoni",1,"1");
+  // let olives = new Topping("Olives",.25,"2");
+  // let onions = new Topping("Onions",.25,"3");
+  // let = new Topping("", , )
+  // let = new Topping("", , )
+  // let = new Topping("", , )
+  // let = new Topping("", , )
+  // let = new Topping("", , )
+  // let = new Topping("", , )
+  // let = new Topping("", , )
+  // let = new Topping("", , )
+
+  // pizzaShop.allToppings.push(cheese,pepperoni,olives,onions);
 }
 
 
