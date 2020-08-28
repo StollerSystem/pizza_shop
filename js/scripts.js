@@ -117,9 +117,9 @@ $(document).ready(function() {
           toppings += ' <span class="topName">'+topping.name+"</span>($"+topping.cost.toFixed(2)+")"
          });
         } else {
-          toppings = "<strong>Plain!</strong>"
+          toppings = '<strong class="yellow">plain!</strong>'
         }        
-        htmlForCart += "<li id="+pizza.Id+'><span class="topPrice">'+pizza.size+" SPACE PIE</span> "+toppings+'<span class="topPrice"> Total Price: $'+price+"</span><button id="+pizza.Id +' class="btn del">Remove</button>'+"</li>";
+        htmlForCart += "<li id="+pizza.Id+'><span class="topPrice">'+pizza.size+" SPACE PIE</span> "+toppings+'<span class="topPrice"> Total Price: <span class="yellow">$'+price.toFixed(2)+"</span></span><button id="+pizza.Id +' class="btn del">Remove</button>'+"</li>";
       }      
     })
     shoppingCart.html(htmlForCart);

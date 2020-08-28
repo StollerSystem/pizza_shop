@@ -50,10 +50,15 @@ h1 {
 .del {
   background-color: #FF206E;
   font-weight: 500;
-  font-size: smaller;
+  font-size: 10px;
   color: #FBFF12;
-  margin: 5px;
-  
+  margin: auto;
+  float: right;
+  height: 5%;  
+}
+
+.del:hover {
+  background-color: #41EAD4;
 }
 
 .row {
@@ -104,4 +109,8 @@ img {
   margin: auto;
   margin-left: 70px;
   width: 40%;
+}
+
+.yellow {
+  color: #FBFF12;
 }
