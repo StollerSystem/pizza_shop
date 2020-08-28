@@ -1,5 +1,10 @@
 // Business Logic 
 
+function Cart() {
+  this.contents = []
+}
+let cart = new Cart()
+
 function Pizza(size) {
   this.size = size
   this.toppings = []
@@ -26,10 +31,10 @@ Pizza.prototype.findCost = function() {
   this.cost = runningCost
 }
 
-let testPie = new Pizza("Small")
+//let testPie = new Pizza("Small")
 
-Pizza.prototype.addTopping = function() {
-
+Pizza.prototype.addTopping = function(topping) { //Might be an array herer?
+  this.toppings.push(topping)
 }
 
 // Toppings
@@ -50,6 +55,13 @@ let onions = new Topping("Onions",.25,"4")
 // User Interface Logic 
 
 $(document).ready(function() {
+  $("#pizzaOrder").submit(function(event) {
+    event.preventDefault(event);
+     let pizza = new Pizza($("#pizzaSize").val())
+     console.log(pizza)
+
+    cart.contents.push(pizza)
+  });
 
 
 
