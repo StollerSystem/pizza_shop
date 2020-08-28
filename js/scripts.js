@@ -93,10 +93,11 @@ $(document).ready(function() {
 
     pizzaShop.shoppingCart.forEach(function(pizza){
       let toppings = "";
+      let price = pizza.findCost();
       pizza.toppings.forEach(function(topping){
-        toppings += " "+topping.name+"("+topping.cost+")"
+        toppings += " "+topping.name+"($"+topping.cost+")"
       });
-      htmlForCart += "<li id="+pizza.Id+">"+pizza.size+" Pizza with:"+toppings+"</li>";
+      htmlForCart += "<li id="+pizza.Id+">"+pizza.size+" Pizza with:"+toppings+" Total Price: $"+price+"</li>";
     })
     shoppingCart.html(htmlForCart);
   }
