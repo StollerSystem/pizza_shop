@@ -1,15 +1,19 @@
 // Business Logic 
 
+// Shop Database
 function Shop() {
   this.shoppingCart = [];
   this.allToppings = [];
+  this.pizzaId = 0
 }
 let pizzaShop = new Shop()
 
-function Pizza(size) {
+// Pizza logic
+function Pizza(size,Id) {
   this.size = size;
   this.toppings = [];
   this.cost = 0;
+  this.Id = Id
 }
 
 Pizza.prototype.findCost = function() {
@@ -29,23 +33,18 @@ Pizza.prototype.findCost = function() {
       runningCost = 20 
       break;
   } 
-
   this.toppings.forEach(function(topping){
     runningCost += topping.cost
   })
-
   this.cost = runningCost;
   return runningCost
 }
-
-//let testPie = new Pizza("Small")
 
 Pizza.prototype.addTopping = function(topping) { 
   this.toppings.push(topping)
 }
 
 // Toppings
-
 function Topping(name,cost,id) {
   this.name = name;
   this.cost = cost;
@@ -69,28 +68,42 @@ generateToppings();
 $(document).ready(function() {
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault(event);
-    let pizza = new Pizza($("#pizzaSize").val())
+    pizzaShop.pizzaId += 1
+    let pizza = new Pizza($("#pizzaSize").val(),pizzaShop.pizzaId)
     //console.log(pizza)
-
     $("input:checkbox[name=toppings]:checked").each(function() {
-      console.log($(this).val());
+      //console.log($(this).val());
       let toppingId = $(this).val()
       pizzaShop.allToppings.forEach(function(topping) {
-        console.log(topping.id)
+        //console.log(topping.id)
         if (topping.id === toppingId) {
-          console.log(topping.name)
+          //console.log(topping.name)
           pizza.addTopping(topping)
         }
       })
      });
-
-
-
-
-
-
     pizzaShop.shoppingCart.push(pizza);
+    displayShoppingCart()
   });
+
+  function displayShoppingCart () {
+    console.log("display cart start")
+    let shoppingCart = $("#shoppingCart");
+    let htmlForCart = "";
+
+    pizzaShop.shoppingCart.forEach(function(pizza){
+      let toppings = "";
+      pizza.toppings.forEach(function(topping){
+        toppings += " "+topping.name+"("+topping.cost+")"
+      });
+      htmlForCart += "<li id="+pizza.Id+">"+pizza.size+" Pizza with:"+toppings+"</li>";
+    })
+    shoppingCart.html(htmlForCart);
+  }
+
+
+
+
 
 
 

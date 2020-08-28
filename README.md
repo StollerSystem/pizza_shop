@@ -22,7 +22,9 @@ A Pizza Shop site where you can select what toppings you would like and what siz
   * Input: Check "Cheese" box then submit
   * Ouput: pizzaShop.shoppingCart[0].toppings[0] = "Cheese"
 
-* [] Site will display the total cost of their custom pie!
+* [X] Site will return the total cost of their custom pie!
+  * Input: Select Large with Cheese and submit
+  * Output: pizzaShop.shoppingCart[0].findCost() = "22.5"
 
 ## Setup/Installation Requirements
 
