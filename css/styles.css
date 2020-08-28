@@ -66,7 +66,6 @@ h1 {
 }
 
 #sizeSelect, .form-group, li {
-
   border: solid  #41EAD4;
   border-width: 1px;
   margin: auto;
@@ -101,7 +100,9 @@ p {
 }
 
 ul {
+  margin: auto;
   list-style: none;
+  margin-right: 30px;
 }
 
 img {
@@ -112,5 +113,10 @@ img {
 }
 
 .yellow {
+  font-weight: 700;
   color: #FBFF12;
+}
+
+.mainTheme h4 {
+  margin-left: 40px;
 }
