@@ -1,6 +1,6 @@
 // Business Logic 
 
-// Shop Database
+// Shop Database and Logic
 function Shop() {
   this.shoppingCart = [];
   this.allToppings = [];
@@ -9,7 +9,7 @@ function Shop() {
 let pizzaShop = new Shop()
 
 Shop.prototype.removePizza = function(Id) {
-  console.log("DELETE",Id)
+  //console.log("DELETE",Id)
   for (let i=0;i<this.shoppingCart.length;i++)
     if(this.shoppingCart[i]) {
       console.log(this.shoppingCart[i].size,this.shoppingCart[i].Id)
@@ -58,34 +58,19 @@ Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping)
 }
 
-// Toppings
+// Toppings Logic
 function Topping(name,cost,id) {
   this.name = name;
   this.cost = cost;
   this.id = id;
 }
 
-function generateToppings () { //Maybe use a loop here???
+function generateToppings () { 
   toppings = ["Cheese","Pepperoni","Black Olives","Onions","Green Peppers","Jalapenos","Pineapple","Canadian Bacon","Sausage","Fresh Basil","Crushed Garlic","Fresh Arugula"]
   prices = [2.50,1,.50,.25,.25,.25,1,1.5,1.5,1,.5,1]
-
   for (let i=0;i<toppings.length;i++) {
     pizzaShop.allToppings.push(new Topping(toppings[i],prices[i],i))
-  }
-  // let cheese = new Topping("Cheese",2.50,"0");
-  // let pepperoni = new Topping("Pepperoni",1,"1");
-  // let olives = new Topping("Olives",.25,"2");
-  // let onions = new Topping("Onions",.25,"3");
-  // let = new Topping("", , )
-  // let = new Topping("", , )
-  // let = new Topping("", , )
-  // let = new Topping("", , )
-  // let = new Topping("", , )
-  // let = new Topping("", , )
-  // let = new Topping("", , )
-  // let = new Topping("", , )
-
-  // pizzaShop.allToppings.push(cheese,pepperoni,olives,onions);
+  }  
 }
 
 
@@ -113,6 +98,7 @@ $(document).ready(function() {
      });
     pizzaShop.shoppingCart.push(pizza);
     displayShoppingCart()
+    $("#pizzaOrder")[0].reset();
   });
 
   function displayShoppingCart() {
@@ -125,7 +111,7 @@ $(document).ready(function() {
         let toppings = "";
         let price = pizza.findCost();
         pizza.toppings.forEach(function(topping){
-          toppings += " "+topping.name+"($"+topping.cost+")"
+          toppings += " "+topping.name+"($"+topping.cost.toFixed(2)+")"
         });
         htmlForCart += "<li id="+pizza.Id+">"+pizza.size+" Pizza with:"+toppings+" Total Price: $"+price+"<button id="+pizza.Id +' class="btn del">Remove</button>'+"</li>";
       }      

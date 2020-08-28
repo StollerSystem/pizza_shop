@@ -70,3 +70,8 @@ h1 {
   font-weight: 500;
   color: #FF206E;
 }
+
+h4 {
+  color: #FBFF12;
+  text-shadow: 2px 2px #FF206E;
+}
