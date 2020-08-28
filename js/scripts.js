@@ -2,7 +2,7 @@
 
 function Shop() {
   this.shoppingCart = [];
-  this.toppings = [];
+  this.allToppings = [];
 }
 let pizzaShop = new Shop()
 
@@ -29,12 +29,18 @@ Pizza.prototype.findCost = function() {
       runningCost = 20 
       break;
   } 
+
+  this.toppings.forEach(function(topping){
+    runningCost += topping.cost
+  })
+
   this.cost = runningCost;
+  return runningCost
 }
 
 //let testPie = new Pizza("Small")
 
-Pizza.prototype.addTopping = function(topping) { //Might be an array herer?
+Pizza.prototype.addTopping = function(topping) { 
   this.toppings.push(topping)
 }
 
@@ -46,20 +52,20 @@ function Topping(name,cost,id) {
   this.id = id;
 }
 
-function generateToppings () {
+function generateToppings () { //Maybe use a loop here???
   let cheese = new Topping("Cheese",2.50,"0");
   let pepperoni = new Topping("Pepperoni",1,"1");
   let olives = new Topping("Olives",.25,"2");
   let onions = new Topping("Onions",.25,"3");
 
-  pizzaShop.toppings.push(cheese,pepperoni,olives,onions);
+  pizzaShop.allToppings.push(cheese,pepperoni,olives,onions);
 }
-generateToppings();
+
 
 
 
 // User Interface Logic 
-
+generateToppings();
 $(document).ready(function() {
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault(event);
@@ -67,12 +73,12 @@ $(document).ready(function() {
     //console.log(pizza)
 
     $("input:checkbox[name=toppings]:checked").each(function() {
-      //console.log($(this).val());
+      console.log($(this).val());
       let toppingId = $(this).val()
-      pizzaShop.toppings.forEach(function(topping) {
-        //console.log(topping.id)
+      pizzaShop.allToppings.forEach(function(topping) {
+        console.log(topping.id)
         if (topping.id === toppingId) {
-          //console.log(topping.name)
+          console.log(topping.name)
           pizza.addTopping(topping)
         }
       })
