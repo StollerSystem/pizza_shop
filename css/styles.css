@@ -11,7 +11,8 @@ h1 {
   text-shadow: 2px 2px #FBFF12;  
 }
 
-#pizzaOrder {
+.mainTheme {
+  /* text-align: center; */
   margin: auto;
   border: solid #FF206E;
   border-radius: 5px;
@@ -22,13 +23,45 @@ h1 {
 }
 
 .form-control {
+  text-align: center;
   margin: 5px;
   background-color: black;
   color: #41EAD4;
+  width: 70%;
 }
 
 .mainBtn {
+  /* text-align: center; */
   background-color: #FF206E;
   font-weight: 500;
   color: #FBFF12;
+  margin: auto;
+  width: auto;
+}
+
+.del {
+  background-color: #FF206E;
+  font-weight: 500;
+  font-size: smaller;
+  color: #FBFF12;
+  margin: 5px;
+  
+}
+
+.row {
+  margin: auto;
+}
+
+#sizeSelect, .form-group {
+
+  border: solid  #41EAD4;
+  border-width: 1px;
+  margin: auto;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+#bottom {
+  padding: 10px;
+  text-align: center;
 }

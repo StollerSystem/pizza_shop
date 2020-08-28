@@ -9,10 +9,8 @@
 </head>
 <body>
   <h1>WELCOME TO PIZZA SPACESHIP</h1>
-  <div class="container">
-    
-    
-    <form id="pizzaOrder">
+  <div class="container">    
+    <form id="pizzaOrder" class="mainTheme">
       <div id="sizeSelect">
         <h4>Select a size:</h4>
         <select class="form-control" id="pizzaSize">        
@@ -23,22 +21,36 @@
       </div>
       <div class ="form-group">
         <h4>Select toppings:</h4>
-        <input type="checkbox" name="toppings" value="0">Cheese<br>
-        <input type="checkbox" name="toppings" value="1">Pepperoni<br>
-        <input type="checkbox" name="toppings" value="2">Olives<br>
-        <input type="checkbox" name="toppings" value="3">Onions<br>        
+          <div class="row">
+            <div class="col-4">
+              <input type="checkbox" name="toppings" value="0">Cheese<br>
+              <input type="checkbox" name="toppings" value="1">Pepperoni<br>
+              <input type="checkbox" name="toppings" value="2">Olives<br>
+              <input type="checkbox" name="toppings" value="3">Onions<br>
+            </div>
+            <div class="col-4">
+              <input type="checkbox" name="toppings" value="4">Cheese<br>
+              <input type="checkbox" name="toppings" value="5">Pepperoni<br>
+              <input type="checkbox" name="toppings" value="6">Olives<br>
+              <input type="checkbox" name="toppings" value="7">Onions<br>              
+            </div>
+            <div class="col-4">
+              <input type="checkbox" name="toppings" value="8">Cheese<br>
+              <input type="checkbox" name="toppings" value="9">Pepperoni<br>
+              <input type="checkbox" name="toppings" value="10">Olives<br>
+              <input type="checkbox" name="toppings" value="11">Onions<br>              
+            </div>
+          </div>
       </div>
-      <button type="submit" class="mainBtn">Add Pizza to Cart!</button>
+      <div id="bottom">
+        <button type="submit" class="mainBtn">Add Pizza to Cart!</button>
+      </div>      
     </form>
-
-
-    <div>
+    <div class="mainTheme">
       <h4>Shopping Cart:</h4>
       <ul id="shoppingCart">
-
       </ul>
     </div>
-
   </div>
 </body>
 </html>
