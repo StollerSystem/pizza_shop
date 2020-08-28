@@ -14,9 +14,13 @@ A Pizza Shop site where you can select what toppings you would like and what siz
 
 ## Specs
  
-* [] User can select a pizza of a size they want.
+* [X] User can select a pizza of a size they want and add it to the cart.
+  * Input: select "Small" pie, submit
+  * Output: pizzaShop.shoppingCart[0].size = "Small" 
 
-* [] User can select what toppings they want on their pie
+* [X] User can select what toppings they want on their pie
+  * Input: Check "Cheese" box then submit
+  * Ouput: pizzaShop.shoppingCart[0].toppings[0] = "Cheese"
 
 * [] Site will display the total cost of their custom pie!
 
