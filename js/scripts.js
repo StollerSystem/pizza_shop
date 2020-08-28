@@ -118,12 +118,8 @@ $(document).ready(function() {
          });
         } else {
           toppings = "<strong>Plain!</strong>"
-        }
-
-
-
-        
-        htmlForCart += "<li id="+pizza.Id+'><span class="topPrice">'+pizza.size+" Pizza</span> "+toppings+'<span class="topPrice"> Total Price: $'+price+"</span><button id="+pizza.Id +' class="btn del">Remove</button>'+"</li>";
+        }        
+        htmlForCart += "<li id="+pizza.Id+'><span class="topPrice">'+pizza.size+" SPACE PIE</span> "+toppings+'<span class="topPrice"> Total Price: $'+price+"</span><button id="+pizza.Id +' class="btn del">Remove</button>'+"</li>";
       }      
     })
     shoppingCart.html(htmlForCart);
@@ -132,7 +128,7 @@ $(document).ready(function() {
   function attachListeners() {
     $("ul#shoppingCart").on("click",".del", function() {
       console.log("CLICKED ON A DEL BUTTON!"+this.id)
-      pizzaShop.removePizza(this.id); /// STILL WORKING HERE!
+      pizzaShop.removePizza(this.id); 
       displayShoppingCart();
     });
   }
