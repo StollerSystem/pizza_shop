@@ -80,6 +80,7 @@ function generateToppings () {
 generateToppings();
 $(document).ready(function() {
   attachListeners();
+  displayShoppingCart()
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault(event);
     pizzaShop.pizzaId += 1
@@ -105,9 +106,10 @@ $(document).ready(function() {
     //console.log("display cart start")
     let shoppingCart = $("#shoppingCart");
     let htmlForCart = "";
-
+    let empty = true 
     pizzaShop.shoppingCart.forEach(function(pizza){
       if (pizza) {
+        empty = false
         let toppings = ""
         let price = pizza.findCost();
         if (pizza.toppings.length > 0) {
@@ -120,8 +122,11 @@ $(document).ready(function() {
           toppings = '<strong class="yellow">plain!</strong>'
         }        
         htmlForCart += "<li id="+pizza.Id+'><span class="topPrice">'+pizza.size+" SPACE PIE</span> "+toppings+'<span class="topPrice"> Total Price: <span class="yellow">$'+price.toFixed(2)+"</span></span><button id="+pizza.Id +' class="btn del">Remove</button>'+"</li>";
-      }      
+      }           
     })
+    if (empty === true) {
+      htmlForCart += "Empty..."
+    }
     shoppingCart.html(htmlForCart);
   }
 
