@@ -14,8 +14,10 @@ A Pizza Shop site where you can select what toppings you would like and what siz
 
 ## Specs
  
-* [] User can select what size pizza they want
+* [] User can select a pizza of a size they want.
+
 * [] User can select what toppings they want on their pie
+
 * [] Site will display the total cost of their custom pie!
 
 ## Setup/Installation Requirements
