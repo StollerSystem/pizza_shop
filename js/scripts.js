@@ -8,6 +8,19 @@ function Shop() {
 }
 let pizzaShop = new Shop()
 
+Shop.prototype.removePizza = function(Id) {
+  console.log("DELETE",Id)
+  for (let i=0;i<this.shoppingCart.length;i++)
+    if(this.shoppingCart[i]) {
+      console.log(this.shoppingCart[i].size,this.shoppingCart[i].Id)
+      if (this.shoppingCart[i].Id == Id) {
+        delete this.shoppingCart[i];
+        return true
+      }
+    }
+    return false
+}
+
 // Pizza logic
 function Pizza(size,Id) {
   this.size = size;
@@ -66,6 +79,7 @@ function generateToppings () { //Maybe use a loop here???
 // User Interface Logic 
 generateToppings();
 $(document).ready(function() {
+  attachListeners();
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault(event);
     pizzaShop.pizzaId += 1
@@ -86,20 +100,30 @@ $(document).ready(function() {
     displayShoppingCart()
   });
 
-  function displayShoppingCart () {
+  function displayShoppingCart() {
     console.log("display cart start")
     let shoppingCart = $("#shoppingCart");
     let htmlForCart = "";
 
     pizzaShop.shoppingCart.forEach(function(pizza){
-      let toppings = "";
-      let price = pizza.findCost();
-      pizza.toppings.forEach(function(topping){
-        toppings += " "+topping.name+"($"+topping.cost+")"
-      });
-      htmlForCart += "<li id="+pizza.Id+">"+pizza.size+" Pizza with:"+toppings+" Total Price: $"+price+"</li>";
+      if (pizza) {
+        let toppings = "";
+        let price = pizza.findCost();
+        pizza.toppings.forEach(function(topping){
+          toppings += " "+topping.name+"($"+topping.cost+")"
+        });
+        htmlForCart += "<li id="+pizza.Id+">"+pizza.size+" Pizza with:"+toppings+" Total Price: $"+price+"<button id="+pizza.Id +' class="btn del">Remove</button>'+"</li>";
+      }      
     })
     shoppingCart.html(htmlForCart);
+  }
+
+  function attachListeners() {
+    $("ul#shoppingCart").on("click",".del", function() {
+      console.log("CLICKED ON A DEL BUTTON!"+this.id)
+      pizzaShop.removePizza(this.id); /// STILL WORKING HERE!
+      displayShoppingCart();
+    });
   }
 
 
