@@ -106,11 +106,11 @@ $(document).ready(function() {
     //console.log("display cart start")
     let shoppingCart = $("#shoppingCart");
     let htmlForCart = "";
-    let empty = true 
+    let empty = true; 
     pizzaShop.shoppingCart.forEach(function(pizza){
       if (pizza) {
-        empty = false
-        let toppings = ""
+        empty = false;
+        let toppings = "";
         let price = pizza.findCost();
         if (pizza.toppings.length > 0) {
           toppings = "with:";
@@ -125,14 +125,24 @@ $(document).ready(function() {
       }           
     })
     if (empty === true) {
-      htmlForCart += "Empty..."
+      htmlForCart += "Empty...";
     }
+    grandTotal();
     shoppingCart.html(htmlForCart);
+  }
+
+  function grandTotal() {
+    let grandTotal = 0;
+    pizzaShop.shoppingCart.forEach(function(pizza){
+      grandTotal += pizza.findCost();
+    })
+    $("#grandTotal").text(" $"+grandTotal.toFixed(2));
+    console.log(grandTotal.toFixed(2));
   }
 
   function attachListeners() {
     $("ul#shoppingCart").on("click",".del", function() {
-      console.log("CLICKED ON A DEL BUTTON!"+this.id)
+      console.log("CLICKED ON A DEL BUTTON!"+this.id);
       pizzaShop.removePizza(this.id); 
       displayShoppingCart();
     });

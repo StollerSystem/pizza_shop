@@ -117,6 +117,13 @@ img {
   color: #FBFF12;
 }
 
-.mainTheme h4 {
+#cartHeader {
   margin-left: 40px;
 }
+
+#grandTotal {
+  font-weight: 800;
+  color: #41EAD4;;
+  text-shadow: 2px 2px #FF206E;
+}
+
