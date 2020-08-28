@@ -1,6 +1,6 @@
 # Pizza Spaceship!
 
-#### A website where a user can order a custom pizza pie! Built 08/14/2020
+#### A website where a user can order a custom pizza pie! Built 08/28/2020
 
 #### By Ben Stoller
 
@@ -14,6 +14,9 @@ A sick pizza shop site where you can order SPACE PIES! Select the size and then 
 Your SPACE PIE will be added to the cart with it's total cost, then at the bottom you can see your grand total.
 Build as many pies as you can!
 If you choose no toppings you'll see "plain!" next to the pie in the cart.  
+Try adding lots of different pies to the cart!
+When done, BLAST OFF!
+(click on the alien to make them go away)
 
 ## Specs
  
@@ -32,7 +35,7 @@ If you choose no toppings you'll see "plain!" next to the pie in the cart.
 ## Setup/Installation Requirements
 
 * If you would like to download this project you will need Git installed and VSCode or a text editor of your choice
-* Use your terminal to "git clone" from https://github.com/StollerSystem/Mr._Robogers_Neighborhood
+* Use your terminal to "git clone" from https://github.com/StollerSystem/pizza_shop
 * Navigate to the Mr._Robogers_Neighborhood directory
 * If using VSCode use command "code ." to open the folder otherwise open the whole folder in your text editor
 * Feel free to mess around with the index.html, styles.css, and scripts.js files! 

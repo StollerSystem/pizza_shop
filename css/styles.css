@@ -2,7 +2,7 @@ body {
   font-family: OCR A Std, monospace;
   background-color: #0C0F0A;
   background-image: url(https://www.bittbox.com/wp-content/uploads/2014/12/17-35-Stunning-Hi-Res-22Public-Domain22-Astronomy-Images.jpg);
-  background-size: 100% 1500px;
+  background-size: 100% 2000px;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -12,7 +12,8 @@ h1 {
   font-size: 80px;
   font-family: OCR A Std, monospace;
   color: #FF206E;
-  text-shadow: 2px 2px #FBFF12;  
+  text-shadow: 2px 2px #FBFF12; 
+  width: 100%; 
 }
 
 .mainTheme {  
@@ -122,5 +123,33 @@ img {
 }
 
 #bottomOfPage {
+  /* display: inline-block; */
   margin-bottom: 50px;
 }
+
+#placeOrder {  
+  display: none;
+  float: right;
+  background-color: #FF206E;
+  font-weight: 500;
+  color: #FBFF12;
+  margin: auto;
+  width: auto;
+  margin-right: 25px;
+}
+
+#placeOrder:hover {
+  box-shadow: 2px 2px 4px 4px #FBFF12;
+}
+
+
+
+.inline {
+  display: inline;
+}
+ #alien {
+   display: none;
+   margin: auto;
+   width: 50%;
+   display: block;
+ }

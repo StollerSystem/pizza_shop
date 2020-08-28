@@ -75,10 +75,12 @@ function generateToppings () {
 
 generateToppings();
 $(document).ready(function() {
+  $("#alien").hide()
   attachListeners();
   displayShoppingCart()
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault(event);
+    $("#placeOrder").show();
     pizzaShop.pizzaId += 1
     let pizza = new Pizza($("#pizzaSize").val(),pizzaShop.pizzaId)    
     $("input:checkbox[name=toppings]:checked").each(function() {      
@@ -94,7 +96,17 @@ $(document).ready(function() {
     $("#pizzaOrder")[0].reset();
   });
 
-  function displayShoppingCart() {    
+  $("#placeOrder").click(function(){
+    $("#alien").show(2000)
+    $(".container").hide(2000)
+  })
+
+  $("#alien").click(function(){
+    $("#alien").hide(2000)
+    $(".container").show(2000)
+  })
+
+  function displayShoppingCart() {        
     let shoppingCart = $("#shoppingCart");
     let htmlForCart = "";
     let empty = true; 
@@ -116,6 +128,7 @@ $(document).ready(function() {
     })
     if (empty === true) {
       htmlForCart += "Empty...start building SPACE PIES!";
+      $("#placeOrder").hide();
     }
     grandTotal();
     shoppingCart.html(htmlForCart);
