@@ -1,0 +1,34 @@
+body {
+  background-color: #0C0F0A;
+  background-image: url();
+}
+
+h1 {
+  text-align: center;
+  font-size: 80px;
+  font-family: OCR A Std, monospace;
+  color: #FF206E;
+  text-shadow: 2px 2px #FBFF12;  
+}
+
+#pizzaOrder {
+  margin: auto;
+  border: solid #FF206E;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px 4px #FBFF12;
+  padding: 20px;
+  width: 60%;
+  color: #41EAD4;
+}
+
+.form-control {
+  margin: 5px;
+  background-color: black;
+  color: #41EAD4;
+}
+
+.mainBtn {
+  background-color: #FF206E;
+  font-weight: 500;
+  color: #FBFF12;
+}
