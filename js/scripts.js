@@ -33,16 +33,16 @@ Pizza.prototype.findCost = function() {
   let runningCost = 0
   const size = this.size
   switch (size) {
-    case ("Small ($10)"):
-      console.log("small");
+    case ("Small"):
+      //console.log("small");
       runningCost += 10
       break;
-    case ("Medium ($15)"):
-      console.log("medium");
+    case ("Medium"):
+      //console.log("medium");
       runningCost += 15
       break;
-    case ("Large ($20)"):
-      console.log("large");
+    case ("Large"):
+      //console.log("large");
       runningCost = 20 
       break;
   } 
@@ -108,12 +108,22 @@ $(document).ready(function() {
 
     pizzaShop.shoppingCart.forEach(function(pizza){
       if (pizza) {
-        let toppings = "";
+        let toppings = ""
         let price = pizza.findCost();
-        pizza.toppings.forEach(function(topping){
-          toppings += " "+topping.name+"($"+topping.cost.toFixed(2)+")"
-        });
-        htmlForCart += "<li id="+pizza.Id+">"+pizza.size+" Pizza with:"+toppings+" Total Price: $"+price+"<button id="+pizza.Id +' class="btn del">Remove</button>'+"</li>";
+        if (pizza.toppings.length > 0) {
+          toppings = "with:";
+          
+          pizza.toppings.forEach(function(topping){
+          toppings += ' <span class="topName">'+topping.name+"</span>($"+topping.cost.toFixed(2)+")"
+         });
+        } else {
+          toppings = "<strong>Plain!</strong>"
+        }
+
+
+
+        
+        htmlForCart += "<li id="+pizza.Id+'><span class="topPrice">'+pizza.size+" Pizza</span> "+toppings+'<span class="topPrice"> Total Price: $'+price+"</span><button id="+pizza.Id +' class="btn del">Remove</button>'+"</li>";
       }      
     })
     shoppingCart.html(htmlForCart);
@@ -126,11 +136,4 @@ $(document).ready(function() {
       displayShoppingCart();
     });
   }
-
-
-
-
-
-
-
 });
