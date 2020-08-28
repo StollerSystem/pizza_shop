@@ -32,7 +32,7 @@ h1 {
   margin: 5px;
   background-color: black;
   color: #41EAD4;
-  width: 70%;
+  width: 99%;
 }
 
 .mainBtn {  
@@ -41,6 +41,11 @@ h1 {
   color: #FBFF12;
   margin: auto;
   width: auto;
+  margin-top: 15px;
+}
+
+.mainBtn:hover {
+  box-shadow: 2px 2px 4px 4px  #41EAD4;
 }
 
 .del {
@@ -142,8 +147,6 @@ img {
   box-shadow: 2px 2px 4px 4px #FBFF12;
 }
 
-
-
 .inline {
   display: inline;
 }
@@ -153,3 +156,5 @@ img {
    width: 50%;
    display: block;
  }
+
+ 

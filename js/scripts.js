@@ -1,7 +1,6 @@
 // Business Logic 
 
 // Shop Database and Logic
-
 function Shop() {
   this.shoppingCart = [];
   this.allToppings = [];
@@ -22,7 +21,6 @@ Shop.prototype.removePizza = function(Id) {
 }
 
 // Pizza logic
-
 function Pizza(size,Id) {
   this.size = size;
   this.toppings = [];
@@ -56,7 +54,6 @@ Pizza.prototype.addTopping = function(topping) {
 }
 
 // Toppings Logic
-
 function Topping(name,cost,id) {
   this.name = name;
   this.cost = cost;
@@ -72,7 +69,6 @@ function generateToppings () {
 }
 
 // User Interface Logic 
-
 generateToppings();
 $(document).ready(function() {
   $("#alien").hide()

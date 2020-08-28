@@ -6,15 +6,15 @@
 
 ### Link to GitHub Pages:
 
-https://github.com/StollerSystem/pizza_shop
+https://StollerSystem.github.io/pizza_shop
 
 ## Description
 
-A sick pizza shop site where you can order SPACE PIES! Select the size and then as MANY toppings as you want!
+A sick pizza shop site where you can order SPACE PIES! Select the size and then add as MANY toppings as you want!
 Your SPACE PIE will be added to the cart with it's total cost, then at the bottom you can see your grand total.
 Build as many pies as you can!
 If you choose no toppings you'll see "plain!" next to the pie in the cart.  
-Try adding lots of different pies to the cart!
+Try adding lots of different pies with different toppings!
 When done, BLAST OFF!
 (click on the alien to make them go away)
 
