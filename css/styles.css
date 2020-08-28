@@ -18,7 +18,7 @@ h1 {
   border-radius: 5px;
   box-shadow: 2px 2px 4px 4px #FBFF12;
   padding: 20px;
-  width: 60%;
+  width: 80%;
   color: #41EAD4;
 }
 
@@ -57,11 +57,16 @@ h1 {
   border: solid  #41EAD4;
   border-width: 1px;
   margin: auto;
-  padding: 5px;
+  padding: 10px;
   margin-top: 5px;
 }
 
 #bottom {
   padding: 10px;
   text-align: center;
+}
+
+.topPrice {
+  font-weight: 500;
+  color: #FF206E;
 }

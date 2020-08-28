@@ -33,15 +33,15 @@ Pizza.prototype.findCost = function() {
   let runningCost = 0
   const size = this.size
   switch (size) {
-    case ("Small"):
+    case ("Small ($10)"):
       console.log("small");
       runningCost += 10
       break;
-    case ("Medium"):
+    case ("Medium ($15)"):
       console.log("medium");
       runningCost += 15
       break;
-    case ("Large"):
+    case ("Large ($20)"):
       console.log("large");
       runningCost = 20 
       break;
@@ -54,6 +54,7 @@ Pizza.prototype.findCost = function() {
 }
 
 Pizza.prototype.addTopping = function(topping) { 
+  console.log(topping)
   this.toppings.push(topping)
 }
 
@@ -65,16 +66,12 @@ function Topping(name,cost,id) {
 }
 
 function generateToppings () { //Maybe use a loop here???
-  toppings = ["Cheese"]
-  prices = [2.50,]
+  toppings = ["Cheese","Pepperoni","Black Olives","Onions","Green Peppers","Jalapenos","Pineapple","Canadian Bacon","Sausage","Fresh Basil","Crushed Garlic","Fresh Arugula"]
+  prices = [2.50,1,.50,.25,.25,.25,1,1.5,1.5,1,.5,1]
 
   for (let i=0;i<toppings.length;i++) {
     pizzaShop.allToppings.push(new Topping(toppings[i],prices[i],i))
   }
-
-
-
-
   // let cheese = new Topping("Cheese",2.50,"0");
   // let pepperoni = new Topping("Pepperoni",1,"1");
   // let olives = new Topping("Olives",.25,"2");
@@ -107,9 +104,9 @@ $(document).ready(function() {
       //console.log($(this).val());
       let toppingId = $(this).val()
       pizzaShop.allToppings.forEach(function(topping) {
-        //console.log(topping.id)
-        if (topping.id === toppingId) {
-          //console.log(topping.name)
+       // console.log(topping.name,topping.id)
+        if (topping.id == toppingId) {
+          console.log(topping.name)
           pizza.addTopping(topping)
         }
       })
@@ -119,7 +116,7 @@ $(document).ready(function() {
   });
 
   function displayShoppingCart() {
-    console.log("display cart start")
+    //console.log("display cart start")
     let shoppingCart = $("#shoppingCart");
     let htmlForCart = "";
 
