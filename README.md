@@ -10,7 +10,10 @@ https://github.com/StollerSystem/pizza_shop
 
 ## Description
 
-A Pizza Shop site where you can select what toppings you would like and what size of pie you want to order then it will calculate the final cost for you. 
+A sick pizza shop site where you can order SPACE PIES! Select the size and then as MANY toppings as you want!
+Your SPACE PIE will be added to the cart with it's total cost, then at the bottom you can see your grand total.
+Build as many pies as you can!
+If you choose no toppings you'll see "plain!" next to the pie in the cart.  
 
 ## Specs
  

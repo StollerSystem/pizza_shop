@@ -5,9 +5,6 @@ body {
   background-size: 100% 1500px;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: cover; */
-  
-
 }
 
 h1 {
@@ -18,8 +15,7 @@ h1 {
   text-shadow: 2px 2px #FBFF12;  
 }
 
-.mainTheme {
-  /* text-align: center; */
+.mainTheme {  
   background-color: black;
   margin: auto;
   border: solid #FF206E;
@@ -38,8 +34,7 @@ h1 {
   width: 70%;
 }
 
-.mainBtn {
-  /* text-align: center; */
+.mainBtn {  
   background-color: #FF206E;
   font-weight: 500;
   color: #FBFF12;
@@ -105,8 +100,7 @@ ul {
   margin-right: 30px;
 }
 
-img {
-  /* text-align: center; */
+img {  
   margin: auto;
   margin-left: 70px;
   width: 40%;
@@ -127,3 +121,6 @@ img {
   text-shadow: 2px 2px #FF206E;
 }
 
+#bottomOfPage {
+  margin-bottom: 50px;
+}

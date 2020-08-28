@@ -1,18 +1,18 @@
 // Business Logic 
 
 // Shop Database and Logic
+
 function Shop() {
   this.shoppingCart = [];
   this.allToppings = [];
   this.pizzaId = 0
 }
+
 let pizzaShop = new Shop()
 
-Shop.prototype.removePizza = function(Id) {
-  //console.log("DELETE",Id)
+Shop.prototype.removePizza = function(Id) {  
   for (let i=0;i<this.shoppingCart.length;i++)
-    if(this.shoppingCart[i]) {
-      console.log(this.shoppingCart[i].size,this.shoppingCart[i].Id)
+    if(this.shoppingCart[i]) {      
       if (this.shoppingCart[i].Id == Id) {
         delete this.shoppingCart[i];
         return true
@@ -22,6 +22,7 @@ Shop.prototype.removePizza = function(Id) {
 }
 
 // Pizza logic
+
 function Pizza(size,Id) {
   this.size = size;
   this.toppings = [];
@@ -33,16 +34,13 @@ Pizza.prototype.findCost = function() {
   let runningCost = 0
   const size = this.size
   switch (size) {
-    case ("Small"):
-      //console.log("small");
+    case ("Small"):     
       runningCost += 10
       break;
-    case ("Medium"):
-      //console.log("medium");
+    case ("Medium"):     
       runningCost += 15
       break;
-    case ("Large"):
-      //console.log("large");
+    case ("Large"):      
       runningCost = 20 
       break;
   } 
@@ -53,12 +51,12 @@ Pizza.prototype.findCost = function() {
   return runningCost
 }
 
-Pizza.prototype.addTopping = function(topping) { 
-  console.log(topping)
+Pizza.prototype.addTopping = function(topping) {  
   this.toppings.push(topping)
 }
 
 // Toppings Logic
+
 function Topping(name,cost,id) {
   this.name = name;
   this.cost = cost;
@@ -73,10 +71,8 @@ function generateToppings () {
   }  
 }
 
-
-
-
 // User Interface Logic 
+
 generateToppings();
 $(document).ready(function() {
   attachListeners();
@@ -84,15 +80,11 @@ $(document).ready(function() {
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault(event);
     pizzaShop.pizzaId += 1
-    let pizza = new Pizza($("#pizzaSize").val(),pizzaShop.pizzaId)
-    //console.log(pizza)
-    $("input:checkbox[name=toppings]:checked").each(function() {
-      //console.log($(this).val());
+    let pizza = new Pizza($("#pizzaSize").val(),pizzaShop.pizzaId)    
+    $("input:checkbox[name=toppings]:checked").each(function() {      
       let toppingId = $(this).val()
-      pizzaShop.allToppings.forEach(function(topping) {
-       // console.log(topping.name,topping.id)
-        if (topping.id == toppingId) {
-          console.log(topping.name)
+      pizzaShop.allToppings.forEach(function(topping) {       
+        if (topping.id == toppingId) {          
           pizza.addTopping(topping)
         }
       })
@@ -102,8 +94,7 @@ $(document).ready(function() {
     $("#pizzaOrder")[0].reset();
   });
 
-  function displayShoppingCart() {
-    //console.log("display cart start")
+  function displayShoppingCart() {    
     let shoppingCart = $("#shoppingCart");
     let htmlForCart = "";
     let empty = true; 
@@ -113,8 +104,7 @@ $(document).ready(function() {
         let toppings = "";
         let price = pizza.findCost();
         if (pizza.toppings.length > 0) {
-          toppings = "with:";
-          
+          toppings = "with:";          
           pizza.toppings.forEach(function(topping){
           toppings += ' <span class="topName">'+topping.name+"</span>($"+topping.cost.toFixed(2)+")"
          });
@@ -125,7 +115,7 @@ $(document).ready(function() {
       }           
     })
     if (empty === true) {
-      htmlForCart += "Empty...";
+      htmlForCart += "Empty...start building SPACE PIES!";
     }
     grandTotal();
     shoppingCart.html(htmlForCart);
@@ -136,8 +126,7 @@ $(document).ready(function() {
     pizzaShop.shoppingCart.forEach(function(pizza){
       grandTotal += pizza.findCost();
     })
-    $("#grandTotal").text(" $"+grandTotal.toFixed(2));
-    console.log(grandTotal.toFixed(2));
+    $("#grandTotal").text(" $"+grandTotal.toFixed(2));    
   }
 
   function attachListeners() {
